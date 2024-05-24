@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      MYSQL_HOST: db
+      MYSQL_USER: root
+      MYSQL_PASSWORD: css222
+      MYSQL_DATABASE: anime_acs
+      # Set the Node.js application environment to use UTF-8
+      LANG: en_US.utf8
+      LC_ALL: en_US.utf8
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: css222
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+      - ./anime_img:/var/lib/mysql-files/anime_img
+      - ./anime_big:/var/lib/mysql-files/anime_big
+      - ./anime_mp4:/var/lib/mysql-files/anime_mp4
+      - ./ACS_Anime_Table.sql:/docker-entrypoint-initdb.d/ACS_Anime_Table.sql
+      - ./incease_file_max_size.sql:/docker-entrypoint-initdb.d/incease_file_max_size.sql
+      - ./mock_anime_docker.sql:/docker-entrypoint-initdb.d/mock_anime_docker.sql
