@@ -438,7 +438,7 @@ const [videoUrl, setVideoUrl] = useState("");
                                 ))}
 
                             </div>
-                            {recommended_anime.big_title !== "can not pred anime guest login or less than 2 anime watched" &&(
+                            {recommended_anime.big_title !== "can not pred anime guest login or less than 3 anime watched" &&(
                             <div>
                                 <h2 className={"text-xl font-bold " + titleColor + " mt-8 mb-4"}>Recommended Anime For You</h2>
                                 <div className="space-y-4">

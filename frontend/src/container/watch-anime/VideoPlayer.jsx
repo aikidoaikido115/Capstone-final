@@ -10,8 +10,7 @@ import {
 import { GrChapterPrevious, GrChapterNext } from "react-icons/gr";
 
 import Danmaku from "../../components/fly_comment/index";
-import video from "./Test.mp4";
-import spyroom from "./spy classroom ss1 ep1.mp4";
+
 
 function VideoPlayer({src, onCurrentTimeChange}) {
   const [isPlaying, setIsPlaying] = useState(false);

@@ -27,17 +27,17 @@ module.exports = async (req, res) =>{
 
         let big_title
         if (pred_title.data === "Guest login"){
-            big_title = "can not pred anime guest login or less than 2 anime watched"
+            big_title = "can not pred anime guest login or less than 3 anime watched"
         }
-        else if (pred_title.data === `${username} ดูอนิเมะยังไม่ครบ 2 เรื่องจึงยังไม่แนะนำอนิเมะเรื่องถัดไปและทำการสุ่มไปก่อน`) {
-            big_title = "can not pred anime guest login or less than 2 anime watched"
+        else if (pred_title.data === `${username} ดูอนิเมะยังไม่ครบ 3 เรื่องจึงยังไม่แนะนำอนิเมะเรื่องถัดไปและทำการสุ่มไปก่อน`) {
+            big_title = "can not pred anime guest login or less than 3 anime watched"
             console.log(big_title)
         }
         else {
             big_title = pred_title.data
         }
 
-        if (big_title === "can not pred anime guest login or less than 2 anime watched") {
+        if (big_title === "can not pred anime guest login or less than 3 anime watched") {
             const responseData = {
                 big_image:"bra bra bra",
                 big_title:big_title,

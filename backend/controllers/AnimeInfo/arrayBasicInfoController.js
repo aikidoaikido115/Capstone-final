@@ -76,7 +76,7 @@ module.exports = async (req, res) =>{
         if (pred_title.data === "Guest login"){
             big_title = randomTitle.title
         }
-        else if (pred_title.data === `${username} ดูอนิเมะยังไม่ครบ 2 เรื่องจึงยังไม่แนะนำอนิเมะเรื่องถัดไปและทำการสุ่มไปก่อน`) {
+        else if (pred_title.data === `${username} ดูอนิเมะยังไม่ครบ 3 เรื่องจึงยังไม่แนะนำอนิเมะเรื่องถัดไปและทำการสุ่มไปก่อน`) {
             big_title = randomTitle.title
             console.log(big_title)
         }
